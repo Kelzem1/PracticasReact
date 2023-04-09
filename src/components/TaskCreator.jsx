@@ -2,11 +2,12 @@ import { useState } from "react"
 
 
 
-export const TaskCreator = () =>{
-    const [ newTaksName, setNewTaksName] = useState()
+export const TaskCreator = (props) =>{
+    const [ newTaksName, setNewTaksName] = useState('')
 
     const handleSubmit = (e) =>{
         e.preventDefault()
+        props.createNewTask(newTaksName)
         localStorage.setItem('task', newTaksName)
         setNewTaksName('')
     }

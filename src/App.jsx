@@ -11,16 +11,31 @@ function App() {
     { name: 'mi segunda tarea', done: false},
     { name: 'mi tercera tarea', done: false},
   ])
+
+  function createTask(taskName) {
+    newTaskItems([...taskItems, {name: taskName, done: false}])
+  }
     return (
       <div className="App bg-slate-900 text-white object-center">
-        <TaskCreator />
-        {
-          taskItems.map(task => (
-            <div>
-            {task.name}
-            </div>
-          ))
-        }
+        <TaskCreator createNewTask={createTask}/>
+        <table>
+          <thead>
+            <tr>
+              <th>Tasks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+            taskItems.map(task => (
+              <tr key={task.name}>
+               <td>
+                {task.name}
+               </td>
+              </tr>
+            ))
+          }
+          </tbody>
+        </table>
       </div>
 
   )
