@@ -2,23 +2,26 @@ import { useState } from "react"
 
 
 
-export const TaskCreator = (props) =>{
+export const TaskCreator = ( {createNewTask} ) =>{
     const [ newTaksName, setNewTaksName] = useState('')
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        props.createNewTask(newTaksName)
+        createNewTask(newTaksName)
         localStorage.setItem('task', newTaksName)
         setNewTaksName('')
     }
     return(
+    <div className="formu bg-slate-500 w-1/4 m-auto content-center">
         <form onSubmit={handleSubmit}>
         <input type='text'
+        className="input text-black bold"
         placeholder='Enter a new task'
         value={newTaksName}
         onChange={(e) => setNewTaksName(e.target.value)}>
         </input>
         <button>Save task</button>
-      </form>
+        </form>
+    </div>
     )
 }

@@ -13,12 +13,13 @@ function App() {
   ])
 
   function createTask(taskName) {
-    newTaskItems([...taskItems, {name: taskName, done: false}])
-  }
+    if(!taskItems.find(task => task.name === taskName))
+      newTaskItems([...taskItems, {name: taskName, done: false}])
+  } 
     return (
-      <div className="App bg-slate-900 text-white object-center">
+      <div className="App bg-slate-900 text-white w-1/4 content-center m-auto mt-12">
         <TaskCreator createNewTask={createTask}/>
-        <table>
+        <table className="tabla content-center m-auto p-5">
           <thead>
             <tr>
               <th>Tasks</th>
