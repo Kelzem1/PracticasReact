@@ -17,7 +17,7 @@ function App() {
       newTaskItems([...taskItems, {name: taskName, done: false}])
   } 
     return (
-      <div className="App bg-slate-900 text-white w-1/4 content-center m-auto mt-12">
+      <div className="App bg-slate-700 text-white w-1/4 content-center m-auto mt-12">
         <TaskCreator createNewTask={createTask}/>
         <table className="tabla content-center m-auto p-5">
           <thead>
