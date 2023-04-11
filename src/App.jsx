@@ -8,6 +8,8 @@ function App() {
 
   const [taskItems, newTaskItems] = useState([])
 
+
+// Añade nueva tarea a la lista y lanza una alerta si esa tarea ya existe
   function createTask(taskName) {
     if(!taskItems.find(task => task.name === taskName)){
       newTaskItems([...taskItems, {name: taskName, done: false}])
@@ -15,7 +17,7 @@ function App() {
       alert("Ya existe esta tarea")
     }
   }
-
+//Guardara las nueva tareas en el localstorage
   useEffect(() => {
     let data = localStorage.getItem('tasks')
     if (data) {
@@ -23,16 +25,16 @@ function App() {
     }
   }, [])
 
-//Guardara las nueva tareas
+//Guardara las nueva tareas en el localstorage
   useEffect( () =>{
     localStorage.setItem('tasks' , JSON.stringify(taskItems))
   }, [ taskItems ])
 
 
     return (
-      <div className="App bg-cyan-950 text-cyan-600 w-4/4 h-screen content-center m-auto p-32">
+      <div className="App bg-cyan-900 text-cyan-600 w-4/4 h-screen content-center m-auto p-32">
         <TaskCreator createNewTask={createTask}/>
-        <table className="tabla content-center m-auto text-xl">
+        <table className="tabla content-center m-auto text-2xl">
           <thead>
             <tr>
               <th>Tasks</th>
@@ -41,8 +43,8 @@ function App() {
           <tbody>
             {
             taskItems.map(task => (
-              <tr key={task.name}>
-               <td>
+              <tr className='bg-cyan-100 m-5 flex rounded' key={task.name}>
+               <td className='p-2'>
                 {task.name}
                </td>
               </tr>
