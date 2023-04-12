@@ -1,6 +1,7 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import { TaskCreator } from './components/TaskCreator'
+import { Titu } from './components/Title'
 
 
 
@@ -32,19 +33,20 @@ function App() {
 
 
     return (
-      <div className="App bg-cyan-900 text-cyan-600 w-4/4 h-screen content-center m-auto p-32">
+      <div className="App bg-gradient-to-r from-sky-500 to-indigo-500 text-cyan-600 w-4/4 h-screen content-center m-auto p-32">
+        <Titu />
         <TaskCreator createNewTask={createTask}/>
-        <table className="tabla content-center m-auto text-2xl">
-          <thead>
+        <table className="tabla content-center m-auto text-2xl bg-blue-400 mt-20 rounded w-1/2 opacity-70">
+          <thead className=''>
             <tr>
-              <th>Tasks</th>
+              <th className='text-blue-900'>Tasks</th>
             </tr>
           </thead>
           <tbody>
             {
             taskItems.map(task => (
-              <tr className='bg-cyan-100 m-5 flex rounded' key={task.name}>
-               <td className='p-2'>
+              <tr className='bg-cyan-200 m-5 flex rounded-tr-lg' key={task.name}>
+               <td className='p-2 text-blue-900'>
                 {task.name}
                </td>
               </tr>
