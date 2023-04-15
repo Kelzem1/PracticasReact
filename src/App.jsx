@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { TaskCreator } from './components/TaskCreator'
 import { Titu } from './components/Title'
 import { TaskTable } from './components/TaskTable'
+import { ShowCompletedTasks } from './components/showCompletedTasks'
 
 
 
@@ -34,6 +35,10 @@ function App() {
     }
   }, [])
 
+  const cleanTasks = () =>{
+    newTaskItems(taskItems.filter(task => !task.done))
+  }
+
 //Guardara las nueva tareas en el localstorage
   useEffect( () =>{
     localStorage.setItem('tasks' , JSON.stringify(taskItems))
@@ -45,11 +50,7 @@ function App() {
         <Titu />
         <TaskCreator createNewTask={createTask}/>
         <TaskTable tasks={taskItems} toggleTask={toggleTask}/>
-
-        <div>
-          <input type='checkbox' onChange={e=> setShowCompleted(!showCompleted)}></input>
-          <label>Done tasks</label>
-        </div>
+        <ShowCompletedTasks setShowCompleted={(checked) => setShowCompleted(checked)} cleanTasks={cleanTasks} />
 
         {
           showCompleted === true && (
