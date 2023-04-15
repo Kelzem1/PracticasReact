@@ -1,4 +1,4 @@
-export const ShowCompletedTasks =({setShowCompleted, cleanTasks}) =>{
+export const ShowCompletedTasks =({isChecked, setShowCompleted, cleanTasks}) =>{
        
     const handleDelete = () =>{
         if(window.confirm('Estas seguro?')) {
@@ -8,7 +8,10 @@ export const ShowCompletedTasks =({setShowCompleted, cleanTasks}) =>{
 
     return(
         <div>
-        <input type='checkbox' onChange={(e)=> setShowCompleted(e.target.checked)}></input>
+        <input type='checkbox'
+        checked={isChecked} 
+        onChange={(e)=> setShowCompleted(e.target.checked)}></input>
+        
         <label onClick={handleDelete}>Done tasks</label>
 
         <button onClick={handleDelete}>

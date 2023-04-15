@@ -37,6 +37,7 @@ function App() {
 
   const cleanTasks = () =>{
     newTaskItems(taskItems.filter(task => !task.done))
+    setShowCompleted(false)
   }
 
 //Guardara las nueva tareas en el localstorage
@@ -50,7 +51,7 @@ function App() {
         <Titu />
         <TaskCreator createNewTask={createTask}/>
         <TaskTable tasks={taskItems} toggleTask={toggleTask}/>
-        <ShowCompletedTasks setShowCompleted={(checked) => setShowCompleted(checked)} cleanTasks={cleanTasks} />
+        <ShowCompletedTasks setShowCompleted={(checked) => setShowCompleted(checked)} cleanTasks={cleanTasks} isChecked={showCompleted} />
 
         {
           showCompleted === true && (
