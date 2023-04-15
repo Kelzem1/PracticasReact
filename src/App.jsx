@@ -9,6 +9,7 @@ import { TaskTable } from './components/TaskTable'
 function App() {
 
   const [taskItems, newTaskItems] = useState([])
+  const [showCompleted, setShowCompleted] = useState(false)
 
 
 // Añade nueva tarea a la lista y lanza una alerta si esa tarea ya existe
@@ -44,6 +45,17 @@ function App() {
         <Titu />
         <TaskCreator createNewTask={createTask}/>
         <TaskTable tasks={taskItems} toggleTask={toggleTask}/>
+
+        <div>
+          <input type='checkbox' onChange={e=> setShowCompleted(!showCompleted)}></input>
+          <label>Done tasks</label>
+        </div>
+
+        {
+          showCompleted === true && (
+            <TaskTable tasks={taskItems} toggleTask={toggleTask} showCompleted={true}/>
+          )
+        }
       </div>
 
   )

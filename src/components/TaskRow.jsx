@@ -4,6 +4,7 @@ export const TaksRow = ({task, toggleTask}) =>{
             <td className='p-2 text-indigo-200'>
               {task.name}
               <input type="checkbox"
+              className="static right-5"
               checked={task.done}
               onChange={() => toggleTask(task)} />
             </td>
