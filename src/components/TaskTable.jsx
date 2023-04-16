@@ -19,7 +19,7 @@ export const TaskTable =({tasks, toggleTask, showCompleted = false}) =>{
         <table className="tabla content-center m-auto text-2xl  mt-10 rounded w-1/2 opacity-90">
         <thead className=''>
           <tr>
-            <th className='text-indigo-200 text-3xl'>Tasks</th>
+            <th className='text-black text-4xl'>Tasks</th>
           </tr>
         </thead>
         <tbody>
