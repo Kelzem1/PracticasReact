@@ -16,6 +16,7 @@ export const ShowCompletedTasks = ({
 
         <label onClick={handleDelete}>Show Done</label>
         <input
+        className="checki"
           type="checkbox"
           checked={isChecked}
           onChange={(e) => setShowCompleted(e.target.checked)}
