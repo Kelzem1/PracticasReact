@@ -1,13 +1,17 @@
 export const TaksRow = ({task, toggleTask}) =>{
     return(
-        <tr className='bg-gray-900 m-5 flex rounded-lg'>
-            <td className='p-2 text-indigo-200'>
-              {task.name}
-              <input type="checkbox"
-              className="static right-5"
-              checked={task.done}
-              onChange={() => toggleTask(task)} />
+        <tr className='bg-gray-400 mt-5 flex rounded-lg shadow-xl'>
+            <td className='p-1 text-slate-700'>
+                {task.name}
+                
+                <input type="checkbox"
+                checked={task.done}
+                onChange={() => toggleTask(task)} />
             </td>
+            
+              
+              
+            
         </tr>
     )
 }

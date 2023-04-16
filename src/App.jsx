@@ -47,7 +47,7 @@ function App() {
 
 
     return (
-      <div className="App bg-gradient-to-r from-indigo-500 to-gray-950 text-cyan-600 w-4/4 h-screen content-center m-auto p-12">
+      <div className="App bg-gradient-to-r from-gray-300 to-gray-200 text-cyan-600 w-full h-screen content-center m-auto p-12">
         <Titu />
         <TaskCreator createNewTask={createTask}/>
         <TaskTable tasks={taskItems} toggleTask={toggleTask}/>
