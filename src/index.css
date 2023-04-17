@@ -2,9 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.checki{
-    background-color: aquamarine;
-}
-.cheki :checked{
-    background-color: beige;
-}
