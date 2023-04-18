@@ -19,7 +19,7 @@ export const TaskTable =({tasks, toggleTask, showCompleted = false}) =>{
         <table className="tabla justify-start m-auto text-2xl mt-12 rounded w-1/2">
         <thead className=''>
           <tr>
-            <th className='text-black text-4xl text-left'>Tasks</th>
+            <th className='text-black text-3xl text-left font-sans'>TASK</th>
           </tr>
         </thead>
         <tbody>
