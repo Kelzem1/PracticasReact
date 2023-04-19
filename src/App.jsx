@@ -22,6 +22,12 @@ function App() {
     }
   }
 
+  const taskEmpty = (taskItems) =>{
+    if(taskItems.length == 0){
+      error('Escribe una tarea')
+    }
+  }
+
   const toggleTask = (task) =>{
   newTaskItems(
     taskItems.map((t) => (t.name == task.name) ? {...t, done: !t.done}: t)
@@ -49,7 +55,7 @@ function App() {
     return (
       <div className="App bg-gradient-to-b from-gray-100 from-90% to-gray-400  shadow-slate-950 text-cyan-600 w-full h-screen content-center m-auto p-12">
         <Titu />
-        <TaskCreator createNewTask={createTask}/>
+        <TaskCreator createNewTask={createTask} taskEmpty={taskEmpty}/>
         <TaskTable tasks={taskItems} toggleTask={toggleTask}/>
         <ShowCompletedTasks setShowCompleted={(checked) => setShowCompleted(checked)} cleanTasks={cleanTasks} isChecked={showCompleted} />
 

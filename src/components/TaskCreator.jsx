@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 
-export const TaskCreator = ( {createNewTask} ) =>{
+export const TaskCreator = ( {createNewTask,} ) =>{
     const [ newTaksName, setNewTaksName] = useState('')
 
 
@@ -22,7 +22,7 @@ export const TaskCreator = ( {createNewTask} ) =>{
         value={newTaksName}
         onChange={(e) => setNewTaksName(e.target.value)}>
         </input>
-        <button className="flex m-auto mt-3 content-center bg-teal-50 shadow-lg hover:bg-teal-600 text-black font-bold py-2 px-4 border-b-4 border-teal-700 hover:border-slate-300 rounded transition duration-75 ease-in-out hover:-translate-y-1 hover:scale-100">Add task</button>
+        <button disabled={newTaksName.length == 0} className="flex m-auto mt-3 content-center bg-teal-50 shadow-lg hover:bg-teal-600 text-black font-bold py-2 px-4 border-b-4 border-teal-700 hover:border-slate-300 rounded transition duration-75 ease-in-out hover:-translate-y-1 hover:scale-100">Add task</button>
         </form>
     </div>
     )
