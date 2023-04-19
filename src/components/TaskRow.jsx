@@ -6,7 +6,7 @@ export const TaksRow = ({task, toggleTask}) =>{
             </td>
             <div className="flex justify-end m-auto w-1/2 p-2">
                 <input type="checkbox"
-                className="accent-sky-800 w-7 h-6"
+                className="accent-teal-700 w-7 h-6"
                 checked={task.done}
                 onChange={() => toggleTask(task)} />
             </div>

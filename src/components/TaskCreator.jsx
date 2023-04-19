@@ -22,7 +22,7 @@ export const TaskCreator = ( {createNewTask} ) =>{
         value={newTaksName}
         onChange={(e) => setNewTaksName(e.target.value)}>
         </input>
-        <button className="flex m-auto mt-3 content-center bg-slate-100 hover:bg-gray-400 text-black font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-slate-100 rounded transition duration-75 ease-in-out hover:-translate-y-1 hover:scale-100">Save task</button>
+        <button className="flex m-auto mt-3 content-center bg-slate-100 hover:bg-teal-600 text-black font-bold py-2 px-4 border-b-4 border-teal-700 hover:border-slate-300 rounded transition duration-75 ease-in-out hover:-translate-y-1 hover:scale-100">Add task</button>
         </form>
     </div>
     )
