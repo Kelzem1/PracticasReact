@@ -17,7 +17,7 @@ export const TaskCreator = ( {createNewTask} ) =>{
     <div className="formu m-auto content-center">
         <form onSubmit={handleSubmit}>
         <input type='text'
-        className="input text-black bold placeholder:italic placeholder:text-slate-400 m-auto content-center block box-border w-1/2 bg-white border border-slate-100 rounded py-2 pl-2 pr-3 shadow shadow-teal-700 focus:outline-none focus:border-gray-300 focus:ring-gray-200 focus:ring-1 sm:text-sm" name="search"
+        className="input text-black bold placeholder:italic placeholder:text-slate-400 m-auto content-center block box-border lg:w-1/2 w-full bg-white border border-slate-100 rounded py-2 pl-2 pr-3 shadow shadow-teal-700 focus:outline-none focus:border-gray-300 focus:ring-gray-200 focus:ring-1 sm:text-sm" name="search"
         placeholder='Enter a new task'
         value={newTaksName}
         onChange={(e) => setNewTaksName(e.target.value)}>
